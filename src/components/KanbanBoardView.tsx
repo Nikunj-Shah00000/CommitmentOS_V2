@@ -140,11 +140,11 @@ export const KanbanBoardView: React.FC<KanbanBoardViewProps> = ({
       </div>
 
       {/* Kanban Columns Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-start overflow-x-auto pb-4">
+      <div className="flex overflow-x-auto gap-4 items-start pb-4 min-w-0">
         {columns.map((col, colIdx) => (
           <div
             key={col.id}
-            className="bg-slate-900/70 border border-slate-800 rounded-2xl p-3.5 flex flex-col gap-3 min-w-[220px]"
+            className="bg-slate-900/70 border border-slate-800 rounded-2xl p-3.5 flex flex-col gap-3 w-64 min-w-[240px] shrink-0"
           >
             {/* Column Header */}
             <div className="flex items-center justify-between border-b border-slate-800 pb-2">

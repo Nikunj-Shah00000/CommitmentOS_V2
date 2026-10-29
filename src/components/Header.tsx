@@ -30,26 +30,26 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         {/* Brand */}
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-amber-500 p-0.5 shadow-lg shadow-indigo-500/20">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-violet-600 to-amber-500 p-0.5 shadow-lg shadow-indigo-500/20 shrink-0">
             <div className="h-full w-full bg-slate-950 rounded-[10px] flex items-center justify-center">
               <Zap className="h-5 w-5 text-amber-400" />
             </div>
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5 font-mono">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5 font-mono shrink-0">
                 CommitmentOS<span className="text-amber-400 font-sans text-xs px-1.5 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">v2.0</span>
               </h1>
-              <span className="font-handwriting text-xs text-amber-300 hidden sm:inline tracking-wide font-bold">
+              <span className="font-handwriting text-xs text-amber-300 hidden sm:inline tracking-wide font-bold shrink-0">
                 Promises Kept.
               </span>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Live Engine
               </span>
             </div>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-400 truncate max-w-xl">
               Verbal Commitment Detection &amp; Google Calendar, Keep &amp; Tasks Synchronization
             </p>
           </div>

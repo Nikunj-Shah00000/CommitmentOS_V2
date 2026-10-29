@@ -265,11 +265,11 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+      <div className="flex items-center justify-between gap-3 min-w-0">
+        <div className="flex-1 min-w-0 flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
           <button
             onClick={() => setFilter('all')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap shrink-0 ${
               filter === 'all'
                 ? 'bg-slate-800 text-white shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
@@ -280,7 +280,7 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
 
           <button
             onClick={() => setFilter('calendar')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
               filter === 'calendar'
                 ? 'bg-blue-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-blue-300'
@@ -292,7 +292,7 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
 
           <button
             onClick={() => setFilter('keep')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
               filter === 'keep'
                 ? 'bg-amber-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-amber-300'
@@ -304,7 +304,7 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
 
           <button
             onClick={() => setFilter('tasks')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
               filter === 'tasks'
                 ? 'bg-indigo-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-indigo-300'
@@ -316,7 +316,7 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
 
           <button
             onClick={() => setFilter('recurring')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
               filter === 'recurring'
                 ? 'bg-amber-500/30 text-amber-300 border border-amber-500/50'
                 : 'text-slate-400 hover:text-amber-300'
@@ -332,10 +332,11 @@ export const CommitmentList: React.FC<CommitmentListProps> = ({
             downloadJsonFile(data, 'commitmentos-extracted.json');
             onToast('Downloaded structured commitments JSON');
           }}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 cursor-pointer shrink-0"
         >
           <Download className="h-3.5 w-3.5" />
-          <span>Export Schema JSON</span>
+          <span className="hidden sm:inline">Export Schema JSON</span>
+          <span className="sm:hidden">Export</span>
         </button>
       </div>
 

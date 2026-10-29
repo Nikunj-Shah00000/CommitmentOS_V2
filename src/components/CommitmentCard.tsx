@@ -228,13 +228,13 @@ export const CommitmentCard: React.FC<CommitmentCardProps> = ({
       </h3>
 
       {/* Speaker Ownership Tag */}
-      <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-2">
-        <span className="text-amber-300 font-semibold flex items-center gap-1">
+      <div className="flex items-center gap-2 text-xs font-mono text-slate-400 mb-2 flex-wrap">
+        <span className="text-amber-300 font-semibold flex items-center gap-1 shrink-0">
           <User className="h-3 w-3" />
           {commitment.owner || 'Speaker'}
         </span>
-        <ArrowRight className="h-3 w-3 text-slate-600" />
-        <span className="text-slate-300">{commitment.waitingPerson || 'Team'}</span>
+        <ArrowRight className="h-3 w-3 text-slate-600 shrink-0" />
+        <span className="text-slate-300 shrink-0">{commitment.waitingPerson || 'Team'}</span>
 
         {commitment.evidenceSpan?.audioStartSec !== undefined && (
           <button
@@ -242,7 +242,7 @@ export const CommitmentCard: React.FC<CommitmentCardProps> = ({
               e.stopPropagation();
               onPlayAudioSegment(commitment.evidenceSpan?.audioStartSec || 0);
             }}
-            className="ml-auto inline-flex items-center gap-1 text-[11px] text-amber-400/90 hover:text-amber-300 hover:underline cursor-pointer"
+            className="ml-auto inline-flex items-center gap-1 text-[11px] text-amber-400/90 hover:text-amber-300 hover:underline cursor-pointer shrink-0"
             title="Jump to audio evidence"
           >
             <Play className="h-3 w-3 fill-amber-400/90" />
@@ -280,13 +280,13 @@ export const CommitmentCard: React.FC<CommitmentCardProps> = ({
 
       {/* Action Buttons */}
       <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/60">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={(e) => {
               e.stopPropagation();
               onToggleStatus(commitment.id, isCompleted ? 'active' : 'completed');
             }}
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-colors cursor-pointer shrink-0 ${
               isCompleted
                 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
                 : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-700'
@@ -301,14 +301,14 @@ export const CommitmentCard: React.FC<CommitmentCardProps> = ({
               e.stopPropagation();
               onOpenDetails(commitment);
             }}
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
           >
             <Info className="h-3 w-3" />
             <span>Details</span>
           </button>
         </div>
 
-        <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center gap-2 flex-wrap" onClick={(e) => e.stopPropagation()}>
           {isCalendar ? (
             <>
               <button

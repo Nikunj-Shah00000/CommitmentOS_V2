@@ -509,18 +509,19 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
         {/* Intelligence Banner */}
+        {/* Intelligence Banner */}
         <div className="bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 mt-0.5">
+          <div className="flex items-start gap-3 min-w-0 flex-1">
+            <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 mt-0.5 shrink-0">
               <Sparkles className="h-5 w-5" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-sm sm:text-base font-semibold text-white">
                   CommitmentOS_V2: Full-Spectrum Commitment Intelligence Platform
                 </h2>
                 {data?.languageDetected && (
-                  <span className="text-[10px] font-mono uppercase bg-amber-400/10 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded">
+                  <span className="text-[10px] font-mono uppercase bg-amber-400/10 text-amber-300 border border-amber-400/30 px-1.5 py-0.5 rounded shrink-0">
                     {data.languageDetected}
                   </span>
                 )}
@@ -531,7 +532,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 self-start md:self-auto font-mono text-xs">
+          <div className="flex items-center gap-2 self-start md:self-auto font-mono text-xs flex-wrap shrink-0">
             <button
               onClick={() => setActiveTab('kanban')}
               className="px-3 py-1.5 rounded-lg bg-indigo-500/15 text-indigo-300 hover:bg-indigo-500/25 border border-indigo-500/30 transition-colors flex items-center gap-1.5 cursor-pointer font-sans font-semibold"
@@ -577,7 +578,7 @@ export default function App() {
             {/* Methodology & Capabilities Reference Card */}
             <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 sm:p-5 text-xs text-slate-400">
               <div className="flex items-center gap-2 text-slate-300 font-semibold mb-3 text-xs uppercase tracking-wider">
-                <HelpCircle className="h-4 w-4 text-amber-400" />
+                <HelpCircle className="h-4 w-4 text-amber-400 shrink-0" />
                 <span>Modules A–F Active Architecture</span>
               </div>
               <ul className="space-y-1.5 list-disc list-inside leading-relaxed text-slate-400">
@@ -592,13 +593,13 @@ export default function App() {
           </div>
 
           {/* Right Column: Views Container */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          <div className="lg:col-span-7 flex flex-col gap-4 min-w-0">
             {/* View Switcher Tabs */}
-            <div className="flex flex-wrap items-center justify-between border-b border-slate-800 pb-2 gap-2">
-              <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900 border border-slate-800 overflow-x-auto max-w-full">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-2 gap-2 min-w-0">
+              <div className="flex-1 min-w-0 flex items-center gap-1 p-1 rounded-xl bg-slate-900 border border-slate-800 overflow-x-auto">
                 <button
                   onClick={() => setActiveTab('board')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'board'
                       ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -610,7 +611,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('kanban')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'kanban'
                       ? 'bg-indigo-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -622,7 +623,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('focus')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'focus'
                       ? 'bg-amber-500 text-slate-950 shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -634,7 +635,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('people')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'people'
                       ? 'bg-indigo-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -646,7 +647,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('analytics')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'analytics'
                       ? 'bg-blue-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -658,7 +659,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('privacy')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'privacy'
                       ? 'bg-emerald-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -670,7 +671,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('advanced')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'advanced'
                       ? 'bg-purple-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -682,7 +683,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('planning')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'planning'
                       ? 'bg-blue-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -694,7 +695,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('agent')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'agent'
                       ? 'bg-indigo-600 text-white shadow-sm font-bold'
                       : 'text-slate-400 hover:text-slate-200'
@@ -706,7 +707,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('transcript')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'transcript'
                       ? 'bg-slate-700 text-white shadow-sm'
                       : 'text-slate-400 hover:text-slate-200'
@@ -718,7 +719,7 @@ export default function App() {
 
                 <button
                   onClick={() => setActiveTab('json')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === 'json'
                       ? 'bg-slate-800 text-emerald-400 shadow-sm border border-emerald-500/40'
                       : 'text-slate-400 hover:text-slate-200'
@@ -729,7 +730,7 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="text-[11px] font-mono text-slate-500 hidden sm:block">
+              <div className="text-[11px] font-mono text-slate-500 hidden sm:block shrink-0 pl-2">
                 CommitmentOS_V2
               </div>
             </div>
